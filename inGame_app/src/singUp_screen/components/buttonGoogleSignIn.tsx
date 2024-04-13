@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'white', // Cor do ícone do Google
+        backgroundColor: 'white', 
         borderRadius: 5,
         paddingVertical: 10,
-        width: '85%',
-        height:'33%',
+        width: '100%',
+        height:55,
         gap:20,
     },
     text: {

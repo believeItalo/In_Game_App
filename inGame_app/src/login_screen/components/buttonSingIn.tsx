@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-
+import { getStrings } from '../../../strings/strings';
 
 const buttonEntrar = () => (
     <TouchableOpacity style={styles.buttonEntrar}>
-        <Text style={styles.textButtonEntrar}> Entrar </Text>
+        <Text style={styles.textButtonEntrar}> {getStrings().buttonEntrarText} </Text>
     </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
     buttonEntrar: {
         width: '85%',
-        height: '15%',
+        height: '10%',
         backgroundColor: '#EA6925',
         alignItems: 'center',
         justifyContent: 'center',
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     },
     textButtonEntrar: {
         color: 'white',
-        fontSize: 24,
+        fontSize: 28,
 
     }
 });

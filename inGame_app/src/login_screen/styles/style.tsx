@@ -13,26 +13,20 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-    // scrollViewAllItems: {
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     // alignItems: 'center',
-    //     // width: '100%',
-    //     backgroundColor: 'tomato'
-    // },
     viewColumnTextInputs: {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        height:'auto',
+        height:'60%', 
         alignItems: 'center',
-        gap: 15
+        justifyContent:'center',
+        gap: 15,
     },
     viewGoogle: {
         width: '100%',
         height:'20%',
         alignItems:'center',
-        gap:12
+        gap:12,
     },
     textsGoogle:{
         width:'85%',
