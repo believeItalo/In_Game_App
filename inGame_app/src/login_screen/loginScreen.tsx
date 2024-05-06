@@ -20,17 +20,24 @@ const LoginScreen = () => {
     //função que lida com o valor do input no contexto dessa tela
     const handleEmailChange = (value) => {
         setEmailValue(value); // Atualiza o estado com o valor do email
-        console.log(value);
+        //console.log(value);
         return value; // Retorna o valor do email
     }
-
+    
+    //função que lida com o valor do input no contexto dessa tela
     const handlePasswordChange = (value) => {
         setPasswordValue(value); // Atualiza o estado com o valor do email
-        console.log(value);
+        //console.log(value);
         return value; // Retorna o valor do email
     }
 
-    //função que lida com o valor do input no contexto dessa tela
+    //função que aramazena os valores dos inputs e os formatam para fazer a requisição na api
+    const jsonApi = {
+        "email": emailValue,
+        "senha": passwordValue
+    }
+    console.log(jsonApi);
+    
 
     return (
 
@@ -44,7 +51,7 @@ const LoginScreen = () => {
             <View style={styles.viewColumnTextInputs}>
 
                 <TextInputEmail onInputChange={handleEmailChange}></TextInputEmail>
-                <PasswordInput  onInputChange={handlePasswordChange}></PasswordInput>
+                <PasswordInput onInputChange={handlePasswordChange}></PasswordInput>
                 <ButtonEntrar></ButtonEntrar>
             </View>
             <View style={styles.viewGoogle}>
