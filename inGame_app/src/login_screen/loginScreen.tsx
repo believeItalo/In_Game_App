@@ -7,7 +7,30 @@ import ButtonEntrar from './components/buttonSingIn';
 import GoogleSignInButton from '../componentsGlobais/buttonContinueGoogle';
 import Header from '../componentsGlobais/header';
 import { getStrings } from '../../strings/strings';
+
+
 const LoginScreen = () => {
+
+    // a função abaixo é utilizada para retornar o valor do texto do componente
+    const [emailValue, setEmailValue] = React.useState(""); // é nescessario criar esse estado
+    // para que o codigo da tela consiga armazenar o valor do texto que será utilizado posteriormente
+    //na chamada da api
+    const [passwordValue, setPasswordValue] = React.useState("");
+
+    //função que lida com o valor do input no contexto dessa tela
+    const handleEmailChange = (value) => {
+        setEmailValue(value); // Atualiza o estado com o valor do email
+        console.log(value);
+        return value; // Retorna o valor do email
+    }
+
+    const handlePasswordChange = (value) => {
+        setPasswordValue(value); // Atualiza o estado com o valor do email
+        console.log(value);
+        return value; // Retorna o valor do email
+    }
+
+    //função que lida com o valor do input no contexto dessa tela
 
     return (
 
@@ -20,8 +43,8 @@ const LoginScreen = () => {
             <Header></Header>
             <View style={styles.viewColumnTextInputs}>
 
-                <TextInputEmail></TextInputEmail>
-                <PasswordInput></PasswordInput>
+                <TextInputEmail onInputChange={handleEmailChange}></TextInputEmail>
+                <PasswordInput  onInputChange={handlePasswordChange}></PasswordInput>
                 <ButtonEntrar></ButtonEntrar>
             </View>
             <View style={styles.viewGoogle}>
@@ -42,3 +65,4 @@ const LoginScreen = () => {
 }
 
 export default LoginScreen
+

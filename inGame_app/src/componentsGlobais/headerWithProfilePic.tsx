@@ -18,11 +18,12 @@ const HeaderWithProfilePic = () => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: '15%',
+        height: '10%',
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         justifyContent: 'space-between',
-        padding: 20
+        paddingLeft:20,
+        paddingRight:20
     },
     profilePic: {
         height: 60,

@@ -14,7 +14,11 @@ export function getStrings() {
         jaTemUmaConta:'Ja tem uma conta ?',
         entre:'Entre',
         venhaFazerParteDo:'Venha fazer parte do',
-        game:'Game'
+        game:'Game',
+        videos_auxiliares:'Videos Auxiliares',
+        exercicios_complementares:'Exercícios Complementares',
+        dicas_de_jogo:'Dicas de Jogo',
+        estrategias_de_jogo:'Estratégias de Jogo'
         
 
     
