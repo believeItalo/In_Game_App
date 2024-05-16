@@ -7,18 +7,18 @@ import { Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
 const TextInputName = ({ onChangeText }) => {
-    const [text, setText] = React.useState("");
+    const [name, setName] = React.useState("");
 
-    const handleTextChange = (text) => {
-        setText(text);
-        onChangeText(text);
+    const handleTextChange = (name) => {
+        setName(name);
+        onChangeText(name);
     };
 
     return (
         <View style={styles.container}>
             <TextInput
                 placeholder={getStrings().nomeTexto}
-                value={text}
+                value={name}
                 onChangeText={handleTextChange}
                 style={[styles.textInput, { width: width * 0.85 }]}
             />

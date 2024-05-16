@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-
+import { StyleSheet, Dimensions } from 'react-native';
+const { height: screenHeight } = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
         width: '100%',
@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
         marginTop: 40
     },
     viewSexAndBirthday: {
-        backgroundColor: 'red',
     },
     viewContinueWithGoogleAndIfAccount: {
         width: 'auto',

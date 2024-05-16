@@ -20,6 +20,60 @@ const SingUpScreen = () => {
     const [position, setPosition] = useState("")
     const [dataNasc, setdataNasc] = useState("")
     const [sexo, setSexo] = useState("")
+
+    //manipula o input do nome
+    const handleNameChange = (value) => {
+        setName(value); // Atualiza o estado com o valor do email
+      
+        return value; // Retorna o valor do name
+    }
+
+    //manipula o input do email
+    const handleEmailChange = (value) => {
+        setEmail(value); // Atualiza o estado com o valor do email
+     
+        return value; // Retorna o valor do email
+    }
+
+    //manipula o input de Password
+    const handlePasswordChange = (value) => {
+        setPassword(value); // Atualiza o estado com o valor do email
+    
+        return value; // Retorna o valor do Password
+    }
+
+    //manipula o input de Position
+    const handlePositionChange = (value) => {
+        setPosition(value); // Atualiza o estado com o valor do email
+
+        return value; // Retorna o valor do Position
+    }
+
+    //manipula o input Sexo
+    const handleSexChange = (value) => {
+        setSexo(value); // Atualiza o estado com o valor do email
+
+        return value; // Retorna o valor do Sexo
+    }
+
+    const handleDateChange = (value) => {
+        setdataNasc(value); // Atualiza o estado com o valor da data de nascimento
+        return value; // Retorna o valor do email
+    }
+
+    const jsonApi = {
+        "nome": name,
+        "email": email,
+        "senha": password,
+        "position": position,
+        "sexo": sexo,
+        "data_nasc": dataNasc
+    }
+
+    console.log(jsonApi);
+
+
+
     return (
         <View style={styles.container}>
             <Image
@@ -34,14 +88,14 @@ const SingUpScreen = () => {
                     <Text style={styles.textGame}>{getStrings().game}</Text>
                 </View>
 
-                <TextInputName onChangeText={setName} ></TextInputName>
-                <TextInputEmail onChangeText={setEmail}></TextInputEmail>
-                <PasswordInput onChangeText={setPassword}></PasswordInput>
-                <ConfirmPassword ></ConfirmPassword>
-                <PositionPicker onChangeValue={setPosition}></PositionPicker>
+                <TextInputName onChangeText={handleNameChange} ></TextInputName>
+                <TextInputEmail onChangeText={handleEmailChange}></TextInputEmail>
+                <PasswordInput onChangeText={handlePasswordChange}></PasswordInput>
+                <ConfirmPassword ></ ConfirmPassword>
+                <PositionPicker onChangeValue={handlePositionChange}></PositionPicker>
                 <View style={styles.viewBirthdayandSex}>
-                    <DateOfBirthPicker></DateOfBirthPicker>
-                    <ChooseSex onChangeValue={setSexo}></ChooseSex>
+                    <DateOfBirthPicker onChangeText={handleDateChange}></DateOfBirthPicker>
+                    <ChooseSex onChangeValue={handleSexChange}></ChooseSex>
                 </View>
                 <ButtonRegister></ButtonRegister>
 

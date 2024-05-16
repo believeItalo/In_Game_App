@@ -36,6 +36,7 @@ const LoginScreen = () => {
         "email": emailValue,
         "senha": passwordValue
     }
+    
     console.log(jsonApi);
     
 

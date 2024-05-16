@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native';
-
+import { StyleSheet, Dimensions  } from 'react-native';
+const { height: screenHeight } = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
-        height: 900,
+        height: 'auto',
         alignItems: 'center',
         justifyContent:'center',
     },

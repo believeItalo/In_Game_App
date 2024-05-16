@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Button, Platform , TextInput, StyleSheet } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-const DateOfBirthPicker = () => {
+const DateOfBirthPicker = ({ onChangeText }) => {
     const [dataNascimento, setDataNascimento] = useState<string>('');
     const [placeholder, setPlaceholder] = useState<string>('Data de Nascimento');
 
@@ -34,6 +34,12 @@ const DateOfBirthPicker = () => {
         }
     };
 
+    const capturarDataNascimento = (novoDataNascimento: string) => {
+        const formattedDate = formatarDataNascimento(novoDataNascimento);
+        setDataNascimento(formattedDate);
+        onChangeText(formattedDate); // Atualiza a data de nascimento na tela SignUpScreen
+    };
+
     return (
         <TextInput
             maxLength={10}
@@ -42,10 +48,7 @@ const DateOfBirthPicker = () => {
             placeholderTextColor='black'
             style={[styles.inputBirthday, styles.placeholder]} // Aplicando estilos múltiplos
             value={dataNascimento}
-            onChangeText={(novoDataNascimento) => {
-                const formattedDate = formatarDataNascimento(novoDataNascimento);
-                setDataNascimento(formattedDate);
-            }}
+            onChangeText={(novoDataNascimento) => capturarDataNascimento(novoDataNascimento)}
             onFocus={handleFocus}
             onBlur={handleBlur}
             textAlign='center' // Centraliza o texto no TextInput
