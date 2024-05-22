@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, KeyboardAvoidingView, Platform, Alert } from 'react-native';
 import styles from './styles/style';
 import TextInputEmail from './components/textInputEmail';
 import PasswordInput from './components/passwordInput';
@@ -7,6 +7,7 @@ import ButtonEntrar from './components/buttonSingIn';
 import GoogleSignInButton from '../componentsGlobais/buttonContinueGoogle';
 import Header from '../componentsGlobais/header';
 import { getStrings } from '../../strings/strings';
+import { log_api } from './services/loginUserService';
 
 
 const LoginScreen = () => {
@@ -23,7 +24,7 @@ const LoginScreen = () => {
         //console.log(value);
         return value; // Retorna o valor do email
     }
-    
+
     //função que lida com o valor do input no contexto dessa tela
     const handlePasswordChange = (value) => {
         setPasswordValue(value); // Atualiza o estado com o valor do email
@@ -32,13 +33,26 @@ const LoginScreen = () => {
     }
 
     //função que aramazena os valores dos inputs e os formatam para fazer a requisição na api
-    const jsonApi = {
+    const jsonApiLogin = {
         "email": emailValue,
         "senha": passwordValue
     }
-    
-    console.log(jsonApi);
-    
+
+    //função responsavel por cuidar do serviço de login
+    const handleLogin = async () => {
+        try {
+            const response = await log_api.logUser(jsonApiLogin);
+            console.log(jsonApiLogin);
+            
+            console.log('Login successful:', response);
+          
+        } catch (error) {
+            console.log(jsonApiLogin);
+            console.error('Erro ao fazer login:', error);
+            
+        }
+    }
+
 
     return (
 
@@ -49,12 +63,13 @@ const LoginScreen = () => {
                 style={styles.backgroundImage}
             />
             <Header></Header>
-            <View style={styles.viewColumnTextInputs}>
 
+            <View style={styles.viewColumnTextInputs}>
                 <TextInputEmail onInputChange={handleEmailChange}></TextInputEmail>
                 <PasswordInput onInputChange={handlePasswordChange}></PasswordInput>
-                <ButtonEntrar></ButtonEntrar>
+                    <ButtonEntrar onPress={handleLogin}></ButtonEntrar>
             </View>
+
             <View style={styles.viewGoogle}>
                 <GoogleSignInButton></GoogleSignInButton>
                 <View style={styles.textsGoogle}>

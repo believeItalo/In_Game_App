@@ -2,8 +2,8 @@ import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { getStrings } from '../../../strings/strings';
 
-const buttonEntrar = () => (
-    <TouchableOpacity style={styles.buttonEntrar}>
+const buttonEntrar = ({onPress}) => (
+    <TouchableOpacity onPress={onPress} style={styles.buttonEntrar}>
         <Text style={styles.textButtonEntrar}> {getStrings().buttonEntrarText} </Text>
     </TouchableOpacity>
 );

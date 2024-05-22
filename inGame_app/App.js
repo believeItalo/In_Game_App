@@ -6,7 +6,7 @@ import { HomeScreen } from './src/home_screen/homeScreen';
 
 export default function App() {
   return (
-      <SingUpScreen></SingUpScreen>
+      <LoginScreen></LoginScreen>
   );
 }
 

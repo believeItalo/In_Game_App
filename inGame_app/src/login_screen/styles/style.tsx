@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions  } from 'react-native';
 const { height: screenHeight } = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
-        height: 'auto',
+        height: '100%',
         alignItems: 'center',
         justifyContent:'center',
     },
@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     orangeTextGoogle: {
         color:'#EA6925',
         fontSize:16,
-        paddingLeft:'1%'
     },
     whiteTextGoogle: {
         color:'white',
